@@ -12,7 +12,7 @@ let
             # True if all named users have keys.
             usersExists = names:
                 let
-                    inherit (builtins) elem toString:
+                    inherit (builtins) elem toString;
 
                     ku = attrNames cfg.keys;
                     nz = s: 0 != (builtins.stringLength s);
