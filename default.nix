@@ -5,8 +5,12 @@ let
 
     callPackage = callPackageWith (super // self.pgregoire);
 
-    self.pgregoire = recurseIntoAttrs {
-        sshproxy = callPackage ./pkgs/sshproxy {};
+    self = {
+        pgregoire = recurseIntoAttrs {
+            sshproxy = callPackage ./pkgs/sshproxy {};
+        } // {
+            lib = import ./lib;
+        };
     };
 in
     self
