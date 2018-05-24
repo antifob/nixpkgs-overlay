@@ -95,11 +95,13 @@ in
                     };
                 };
             });
+            default = [];
             description = "Proxying rules.";
         };
 
         keys = mkOption {
             type = types.attrsOf types.str;
+            default = {};
             description = "Users to public SSH key map.";
         };
     };
